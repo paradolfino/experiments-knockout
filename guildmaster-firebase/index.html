@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Guildmaster</title>
-        <link rel='stylesheet' href='./styles/style.css'/>
-    </head>
-    <body>
-        <h1>Test</h1>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-    </body>
+
+<head>
+    <title>Guildmaster</title>
+    <link rel='stylesheet' href='./styles/style.css' />
+</head>
+
+<body>
+    <h1>Test</h1>
+    <h2>Your seat reservations</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Passenger name</th>
+                <th>Meal</th>
+                <th>Surcharge</th>
+                <th></th>
+            </tr>
+        </thead>
+        <!-- Todo: Generate table body -->
+        <tbody data-bind="foreach: seats">
+            <tr>
+                <td>
+                    <input data-bind="value: name" />
+                </td>
+                <td>
+                    <select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select>
+                </td>
+                <td data-bind="text: formattedPrice"></td>
+                <td>
+                    <a href="#" data-bind="click: $root.removeSeat">Remove</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr/>
+    <input type='text' placeholder='Enter a new Passenger' data-bind="value: passengerName" />
+    <button data-bind="click: addSeat">Reserve another seat</button>
+    <span data-bind="text: totalSurcharge"></span>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script src="index.js"></script>
+</body>
 
 </html>
