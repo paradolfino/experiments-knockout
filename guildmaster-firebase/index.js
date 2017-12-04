@@ -1,49 +1,44 @@
 // Class to represent a row in the seat reservations grid
-function SeatReservation(name, initialMeal) {
+function AddRank(name, initialRank, initialClass) {
     var self = this;
     self.name = name;
-    self.meal = ko.observable(initialMeal);
-    
-     self.formattedPrice = ko.computed(function() {
-        var price = self.meal().price;
-        var nullPrice = 0;
-        return price ? "$" + price.toFixed(2) : "$" + nullPrice.toFixed(2);        
-    });
+    self.rank = ko.observable(initialRank);
+    self.class = ko.observable(initialClass);
 }
 
 // Overall viewmodel for this screen, along with initial state
-function ReservationsViewModel() {
+function GuildMembersViewModel() {
     var self = this;
 
     // Non-editable catalog data - would come from the server
-    self.availableMeals = [
-        { mealName: "Standard (sandwich)", price: 0 },
-        { mealName: "Premium (lobster)", price: 34.95 },
-        { mealName: "Ultimate (whole zebra)", price: 290 }
-    ];    
+    self.availableRanks = [
+        { rankName: "Initiate", level: 'Member'},
+        { rankName: "Officer", level: 'Officer' },
+        { rankName: "Master", level: 'Master' }
+    ];
+    
+    self.availableClasses = [
+        { className: "Warrior" },
+        { className: "Priest" },
+        { className: "Hunter" }
+    ];
 
     // Editable data
-    self.seats = ko.observableArray([
-        new SeatReservation("Steve", self.availableMeals[0]),
-        new SeatReservation("Bert", self.availableMeals[0])
+    self.members = ko.observableArray([
+        new AddRank("Steve", self.availableRanks[0], self.availableClasses[0]),
+        new AddRank("Bert", self.availableRanks[0], self.availableClasses[0])
     ]);
     
-    self.passengerName = ko.observable("");
+    self.memberName = ko.observable("");
     
     // Operations
-    self.addSeat = function() {
-        self.seats.push(new SeatReservation(self.passengerName, self.availableMeals[0]));
+    self.addMember = function() {
+        self.members.push(new AddRank(self.memberName, self.availableRanks[0], self.availableClasses[0]));
     }
     
-    self.removeSeat = function(seat) { self.seats.remove(seat) };
+    self.removeMember = function(member) { self.members.remove(member) };
     
-    self.totalSurcharge = ko.computed(function() {
-       var total = 0;
-       for (var i = 0; i < self.seats().length; i++) {
-           total += self.seats()[i].meal().price;
-       }
-       return "$" + total.toFixed(2);
-    });
+   
 }
 
-ko.applyBindings(new ReservationsViewModel());
+ko.applyBindings(new GuildMembersViewModel());

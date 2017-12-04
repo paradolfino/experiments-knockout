@@ -7,38 +7,37 @@
 </head>
 
 <body>
-    <h1>Test</h1>
-    <h2>Your seat reservations</h2>
+    <h2>Your Guild Members</h2>
 
     <table>
         <thead>
             <tr>
-                <th>Passenger name</th>
-                <th>Meal</th>
-                <th>Surcharge</th>
+                <th>Member Name</th>
+                <th>Rank</th>
+                <th>Class</th>
                 <th></th>
             </tr>
         </thead>
         <!-- Todo: Generate table body -->
-        <tbody data-bind="foreach: seats">
+        <tbody data-bind="foreach: members">
             <tr>
                 <td>
                     <input data-bind="value: name" />
                 </td>
                 <td>
-                    <select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select>
+                    <select data-bind="options: $root.availableRanks, value: rank, optionsText: 'rankName'"></select>
                 </td>
-                <td data-bind="text: formattedPrice"></td>
+                
                 <td>
-                    <a href="#" data-bind="click: $root.removeSeat">Remove</a>
+                    <a href="#" data-bind="click: $root.removeMember">Remove</a>
                 </td>
             </tr>
         </tbody>
     </table>
     <hr/>
-    <input type='text' placeholder='Enter a new Passenger' data-bind="value: passengerName" />
-    <button data-bind="click: addSeat">Reserve another seat</button>
-    <span data-bind="text: totalSurcharge"></span>
+    <input type='text' placeholder="Enter a new Guild Member's Name" data-bind="value: memberName" />
+    <button data-bind="click: addMember">Add Member</button>
+    <span data-bind="text: members().length"></span>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
     <script src="index.js"></script>
 </body>
