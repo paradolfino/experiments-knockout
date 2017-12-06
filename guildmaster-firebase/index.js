@@ -4,6 +4,7 @@ function AddRank(name, initialRank, initialClass) {
     self.name = name;
     self.rank = ko.observable(initialRank);
     self.class = ko.observable(initialClass);
+    console.log(initialClass);
 }
 
 // Overall viewmodel for this screen, along with initial state
@@ -12,7 +13,7 @@ function GuildMembersViewModel() {
 
     // Non-editable catalog data - would come from the server
     self.availableRanks = [
-        { rankName: "Initiate", level: 'Member'},
+        { rankName: "Initiate", level: 'Member' },
         { rankName: "Officer", level: 'Officer' },
         { rankName: "Master", level: 'Master' }
     ];
