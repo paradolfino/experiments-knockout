@@ -1,51 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Guildmaster</title>
-    <link rel='stylesheet' href='./styles/style.css' />
-</head>
-
-<body>
-    <h2>Your Guild Members</h2>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Member Name</th>
-                <th>Rank</th>
-                <th>Class</th>
-                <th></th>
-            </tr>
-        </thead>
-        <!-- Todo: Generate table body -->
-        <tbody data-bind="foreach: members">
-            <tr>
-                <td>
-                    <input data-bind="value: name" />
-                </td>
-                <td>
-                    <select data-bind="options: GuildMembers.availableRanks, value: rank, optionsText: 'rankName'"></select>
-                </td>
-
-                <td>
-                    <a href="#" data-bind="click: $root.removeMember">Remove</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <hr />
-    <input type='text' placeholder="Enter a new Guild Member's Name" data-bind="value: memberName" />
-    <button data-bind="click: addMember">Add Member</button>
-    <span data-bind="text: members().length"></span>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-    <script src="index.js"></script>
-</body>
-
-</html>
-<script type="text/javascript">
-
-    var GuildMembers = GuildMembers || {};
+var GuildMembers = GuildMembers || {};
 
     GuildMembers.availableRanks = [
         { rankName: "Initiate", level: 'Member' },
@@ -75,6 +28,7 @@
         self.members = ko.observableArray([]);
         self.memberName = ko.observable("");
 
+        // Class to represent a row in the seat reservations grid
         self.addRank = function (name, initialRank, initialClass)
         {
             var rank = new GuildMembers.RankModel(name, initialRank, initialClass);
@@ -100,4 +54,3 @@
     }
 
     ko.applyBindings(new GuildMembers.GuildMembersViewModel());
-</script>
