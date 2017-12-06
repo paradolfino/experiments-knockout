@@ -1,45 +1,56 @@
-// Class to represent a row in the seat reservations grid
-function AddRank(name, initialRank, initialClass) {
-    var self = this;
-    self.name = name;
-    self.rank = ko.observable(initialRank);
-    self.class = ko.observable(initialClass);
-    console.log(initialClass);
-}
+var GuildMembers = GuildMembers || {};
 
-// Overall viewmodel for this screen, along with initial state
-function GuildMembersViewModel() {
-    var self = this;
-
-    // Non-editable catalog data - would come from the server
-    self.availableRanks = [
+    GuildMembers.availableRanks = [
         { rankName: "Initiate", level: 'Member' },
         { rankName: "Officer", level: 'Officer' },
         { rankName: "Master", level: 'Master' }
     ];
-    
-    self.availableClasses = [
+
+    GuildMembers.availableClasses = [
         { className: "Warrior" },
         { className: "Priest" },
         { className: "Hunter" }
     ];
 
-    // Editable data
-    self.members = ko.observableArray([
-        new AddRank("Steve", self.availableRanks[0], self.availableClasses[0]),
-        new AddRank("Bert", self.availableRanks[0], self.availableClasses[0])
-    ]);
-    
-    self.memberName = ko.observable("");
-    
-    // Operations
-    self.addMember = function() {
-        self.members.push(new AddRank(self.memberName, self.availableRanks[0], self.availableClasses[0]));
+    GuildMembers.RankModel = function (name, initialRank, initialClass)
+    {
+        var self = this;
+        self.name = name;
+        self.rank = ko.observable(initialRank);
+        self.class = ko.observable(initialClass);
     }
-    
-    self.removeMember = function(member) { self.members.remove(member) };
-    
-   
-}
 
-ko.applyBindings(new GuildMembersViewModel());
+    GuildMembers.GuildMembersViewModel = function ()
+    {
+        var self = this;
+
+        // Editable data
+        self.members = ko.observableArray([]);
+        self.memberName = ko.observable("");
+
+        // Class to represent a row in the seat reservations grid
+        self.addRank = function (name, initialRank, initialClass)
+        {
+            var rank = new GuildMembers.RankModel(name, initialRank, initialClass);
+            self.members.push(rank);
+        }
+
+        // Operations
+        self.addMember = function ()
+        {
+            //you can also do ko.unwrap
+            self.addRank(self.memberName(), GuildMembers.availableRanks[0], GuildMembers.availableClasses[0]);
+        }
+
+        self.removeMember = function (member) { self.members.remove(member) };
+
+        self.initDefaults = function ()
+        {
+            self.addRank("Steve", GuildMembers.availableRanks[0], GuildMembers.availableClasses[0]);
+            self.addRank("Bert", GuildMembers.availableRanks[0], GuildMembers.availableClasses[0]);
+        }
+
+        self.initDefaults();
+    }
+
+    ko.applyBindings(new GuildMembers.GuildMembersViewModel());
