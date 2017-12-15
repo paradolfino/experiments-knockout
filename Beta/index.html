@@ -7,7 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="output">
+        <h1>User List</h1>
+        <ul data-bind="foreach: UsersViewModel.userArray1">
+            <li data-bind="text: $data"></li>
+        </ul>
+        <ul data-bind="foreach: UsersViewModel.userArray2">
+            <li data-bind="text: firstName"></li>
+        </ul>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
     <script src="./index.js"></script>
 </body>
 </html>
