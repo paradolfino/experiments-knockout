@@ -6,3 +6,5 @@ function viewModel() {
         {name: 'Mike'}
     ]);
 }
+
+ko.applyBindings(new viewModel());
