@@ -1,24 +1,25 @@
 function viewModel() {
     const self = this;
+    //localStorage.clear();
     if (!localStorage){
         self.todos = ko.observableArray([]);
     } else {
-        console.log(localStorage.getItem('todos'));
-        self.todos = ko.observableArray([]);
+        self.todos = ko.observableArray(JSON.parse(localStorage.getItem('todos')));
     }
-    
     self.addTD = function() {
         self.todos.push({ item: $('#add').val()});
-        saveState();
+        self.save();
     };
     self.remTD = function() {
         self.todos.remove(this);
-        saveState();
+        self.save();
     };
+
+    self.save = function() {
+        localStorage.setItem('todos',JSON.stringify(self.todos()));
+        let curState = JSON.stringify(localStorage.getItem('todos'));
+    }
 }
 
-function saveState() {
-    localStorage.setItem('todos',viewModel().todos);
-}
 
 ko.applyBindings(new viewModel());
