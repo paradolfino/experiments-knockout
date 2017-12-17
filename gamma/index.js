@@ -5,6 +5,10 @@ function viewModel() {
         {name: 'Flem'},
         {name: 'Mike'}
     ]);
+
+    self.addUser = () => {
+        self.users.push({name: $('#newUser').val()});
+    }
 }
 
 ko.applyBindings(new viewModel());
