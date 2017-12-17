@@ -5,7 +5,6 @@ function viewModel() {
         self.todos = ko.observableArray([]);
     } else {
         self.todos = ko.observableArray(JSON.parse(localStorage.getItem('todos')));
-        
     }
     self.addTD = function() {
         self.todos.push({ item: $('#add').val()});
@@ -19,7 +18,6 @@ function viewModel() {
     self.save = function() {
         localStorage.setItem('todos',JSON.stringify(self.todos()));
         let curState = JSON.stringify(localStorage.getItem('todos'));
-        console.log(JSON.stringify(self.todos()));
     }
 }
 
