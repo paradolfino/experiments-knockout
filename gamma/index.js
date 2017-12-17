@@ -6,8 +6,13 @@ function viewModel() {
         {name: 'Mike'}
     ]);
 
-    self.addUser = () => {
+    self.addUser = function() {
         self.users.push({name: $('#newUser').val()});
+    }
+
+    self.removeUser = function() {
+        self.users.remove(this);
+        console.log("remove");
     }
 }
 
