@@ -42,6 +42,10 @@ function viewModel() {
     self.removeHover = function() {
         this.isHover(false);
     }
+
+    //value binding
+    self.userName = ko.observable('');
+    self.password = ko.observable('');
 }
 
 ko.applyBindings(new viewModel());
