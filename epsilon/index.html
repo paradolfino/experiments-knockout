@@ -24,13 +24,15 @@
                 </tr>
             </thead>
             <tbody data-bind="foreach: todos">
-                <tr data-bind="text: item">
-                    
+                <tr>
+                    <td><span data-bind="text: item"></span></td>
+                    <td><button data-bind="click: $root.remTD" class="btn btn-danger">X</button></td>
                 </tr>
+                
             </tbody>
         </table>
         <input type="text" id="add"/><br />
-        <button data-bind="click: addTD" class="btn btn-primary">Add ToDo</button>
+        <button data-bind="click: addTD" class="btn btn-primary">Add Task</button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
