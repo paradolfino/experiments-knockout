@@ -5,18 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Epsilon: ToDo List</title>
+    <title>Epsilon: Arbejder</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./style/style.scss"/>
 </head>
 
 <body>
-    
+    <div id="header">
+        <h1>Arbejder Workflow Helper</h1>
+    </div>
     <div id="main">
-        <h1>ToDo List</h1>
-        <ul data-bind="foreach: todos">
-            <li><span data-bind="text: item"></span> | <button data-bind="click: $root.remTD" class="btn btn-danger">X</button></li>
-        </ul>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: todos">
+                <tr data-bind="text: item">
+                    
+                </tr>
+            </tbody>
+        </table>
         <input type="text" id="add"/><br />
         <button data-bind="click: addTD" class="btn btn-primary">Add ToDo</button>
     </div>
