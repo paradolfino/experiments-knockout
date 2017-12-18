@@ -1,5 +1,6 @@
 function viewModel() {
     const self = this;
+    self.history = []; 
     localStorage.clear();
     if (!localStorage){
         self.todos = ko.observableArray([]);
@@ -21,9 +22,16 @@ function viewModel() {
     };
     
     //additional option functions
-    self.startTD = function() {
-        
+    self.startTD = function(todo) {
+        todo.state = 'started';
+        alert(JSON.stringify(todo));
     };
+    
+    self.doneTD = function(todo) {
+        todo.state = 'done';
+        alert(JSON.stringify(todo));
+    };
+    
 
     //database
     self.save = function() {
