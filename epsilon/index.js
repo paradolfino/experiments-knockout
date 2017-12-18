@@ -1,6 +1,6 @@
 function viewModel() {
     const self = this;
-    localStorage.clear();
+    //localStorage.clear();
     if (!localStorage){
         self.todos = ko.observableArray([]);
     } else {

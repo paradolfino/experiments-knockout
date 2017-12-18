@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Epsilon: Arbejder</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./style/style.scss"/>
+    <link rel="stylesheet" href="./style/style.scss" />
 </head>
 
 <body>
@@ -15,23 +15,30 @@
         <h1>Arbejder Workflow Helper</h1>
     </div>
     <div id="main">
-        
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Task</th>
-                    <th>Options</th>
-                </tr>
-            </thead>
-            <tbody data-bind="foreach: todos">
-                <tr>
-                    <td><span data-bind="text: item"></span></td>
-                    <td><button data-bind="click: $root.remTD" class="btn btn-danger">X</button></td>
-                </tr>
-                
-            </tbody>
-        </table>
-        <input type="text" id="add"/><br />
+
+        <div id="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: todos">
+                    <tr>
+                        <td>
+                            <span data-bind="text: item"></span>
+                        </td>
+                        <td>
+                            <button data-bind="click: $root.remTD" class="btn btn-danger">X</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <input type="text" id="add" />
+        <br />
         <button data-bind="click: addTD" class="btn btn-primary">Add Task</button>
     </div>
 
