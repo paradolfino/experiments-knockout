@@ -10,8 +10,8 @@ function viewModel() {
         self.todos.push({ item: $('#add').val()});
         self.save();
     };
-    self.remTD = function() {
-        self.todos.remove(this);
+    self.remTD = function(todo) {
+        self.todos.remove(todo);
         self.save();
     };
 
