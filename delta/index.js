@@ -22,6 +22,30 @@ function viewModel() {
         lat: 42,
         lon: 71
     };
+
+    //form and input bindings
+    self.users = ko.observableArray([
+        "John",
+        "Lance",
+        "Dan"
+    ]);
+
+    self.removeUser = function(user) {
+        self.users.remove(user);
+    }
+
+    //event bindings
+    self.isHover = ko.observable(false);
+    self.addHover = function() {
+        this.isHover(true);
+    }
+    self.removeHover = function() {
+        this.isHover(false);
+    }
+
+    //value binding
+    self.userName = ko.observable('');
+    self.password = ko.observable('');
 }
 
 ko.applyBindings(new viewModel());
