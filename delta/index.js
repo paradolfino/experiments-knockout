@@ -1,16 +1,8 @@
-/*function viewModelText() {
-    const self = this;
-    self.name = ko.observable('Broom');
-    self.job = ko.observable('Cleaner');
-}*/
 
-function viewModelVisible() {
+
+function viewModel() {
     const self = this;
-    self.showMessage = ko.observable(true);
-    self.hideMessage = function() {
-        self.showMessage(false);
-    }
+    self.htmlString = ko.observable("<h1>This is an html heading</h1><p>This is a paragraph.</p>");
 }
 
-//ko.applyBindings(new viewModelText());
-ko.applyBindings(new viewModelVisible());
+ko.applyBindings(new viewModel());
