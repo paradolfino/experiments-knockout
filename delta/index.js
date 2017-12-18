@@ -15,6 +15,13 @@ function viewModel() {
     ]);
 
     self.customers = ko.observableArray(["Sprock", "Sprint", "Sprecht"]);
+
+    //with
+    self.city = "Boston";
+    self.coords = {
+        lat: 42,
+        lon: 71
+    };
 }
 
 ko.applyBindings(new viewModel());
