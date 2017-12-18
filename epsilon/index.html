@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Epsilon: Arbejder</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./style/style.scss" />
+    <link rel="stylesheet" href="./style/style.css" />
 </head>
 
 <body>
@@ -30,7 +30,9 @@
                             <span data-bind="text: item"></span>
                         </td>
                         <td>
-                            <button data-bind="click: $root.remTD" class="btn btn-danger">X</button>
+                            <button data-bind="click: $parents[0].remTD" class="btn btn-danger">X</button>
+                            <button data-bind="click: $parents[0].startTD" class="btn btn-primary">Clock In</button>
+                            <button data-bind="click: " class="btn btn-success">Done</button>
                         </td>
                     </tr>
 
