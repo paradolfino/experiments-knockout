@@ -22,6 +22,17 @@ function viewModel() {
         lat: 42,
         lon: 71
     };
+
+    //form and input bindings
+    self.users = ko.observableArray([
+        "John",
+        "Lance",
+        "Dan"
+    ]);
+
+    self.removeUser = function(user) {
+        self.users.remove(user);
+    }
 }
 
 ko.applyBindings(new viewModel());
