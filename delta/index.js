@@ -33,6 +33,15 @@ function viewModel() {
     self.removeUser = function(user) {
         self.users.remove(user);
     }
+
+    //event bindings
+    self.isHover = ko.observable(false);
+    self.addHover = function() {
+        this.isHover(true);
+    }
+    self.removeHover = function() {
+        this.isHover(false);
+    }
 }
 
 ko.applyBindings(new viewModel());
