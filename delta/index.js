@@ -2,7 +2,8 @@
 
 function viewModel() {
     const self = this;
-    self.htmlString = ko.observable("<h1>This is an html heading</h1><p>This is a paragraph.</p>");
+    self.htmlString("<h1>Lol</h1>");
+    self.amount = ko.observable(11);
 }
 
 ko.applyBindings(new viewModel());
