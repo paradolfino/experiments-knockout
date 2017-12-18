@@ -8,7 +8,6 @@ function viewModelVisible() {
     const self = this;
     self.showMessage = ko.observable(true);
     self.hideMessage = function() {
-        alert("g");
         self.showMessage(false);
     }
 }

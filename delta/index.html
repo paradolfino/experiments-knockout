@@ -14,8 +14,8 @@
     <!--<p>Hello, my name is <span data-bind="text: name">Not Bound</span>, and I am a <span data-bind="text: job">Not Bound</span></p>-->
 
     <p data-bind="visible: showMessage">The message</p>
-    <button data-bind="click: showMessage">Show</button>
-    <button data-bind="click: hideMessage">Hide</button>
+    <button data-bind="visible: !showMessage(), click: showMessage">Show</button>
+    <button data-bind="visible: showMessage(), click: hideMessage">Hide</button>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
