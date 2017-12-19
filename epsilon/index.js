@@ -24,12 +24,12 @@ function viewModel() {
     //additional option functions
     self.startTD = function(todo) {
         todo.state = 'started';
-        alert(JSON.stringify(todo));
     };
     
     self.doneTD = function(todo) {
         todo.state = 'done';
-        alert(JSON.stringify(todo));
+        self.todos.remove(todo);
+        self.save();
     };
     
 
