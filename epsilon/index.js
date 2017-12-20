@@ -1,10 +1,11 @@
 function viewModel() {
     const self = this;
-    self.history = []; 
     localStorage.clear();
+    self.history = [];
     if (!localStorage){
         self.todos = ko.observableArray([]);
     } else {
+        self.history ? self.histories = self.history.length : self.histories = 0;
         self.todos = ko.observableArray(JSON.parse(localStorage.getItem('todos')));
     }
     
@@ -28,16 +29,26 @@ function viewModel() {
     
     self.doneTD = function(todo) {
         todo.state = 'done';
+        self.history.push({
+            item: todo.item,
+            createdAt: null,
+            startedAt: null,
+            completedAt: null
+        });
         self.todos.remove(todo);
         self.save();
+        self.saveHistory();
     };
     
 
     //database
     self.save = function() {
         localStorage.setItem('todos',JSON.stringify(self.todos()));
-        let curState = JSON.stringify(localStorage.getItem('todos'));
     }
+
+    self.saveHistory = function() {
+        localStorage.setItem('history',JSON.stringify(self.history));
+    };
 }
 
 let dataLayer = {
