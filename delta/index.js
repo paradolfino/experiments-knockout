@@ -57,7 +57,11 @@ function viewModel() {
     self.submitMessage = ko.observable();
     self.fireSubmit = function() {
         self.submitMessage('Form submitted');
-    }
+    };
+
+    //enable - disable binding
+    self.isCompany = ko.observable(false);
+    self.companyName = "";
 }
 
 ko.applyBindings(new viewModel());
