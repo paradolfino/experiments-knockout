@@ -13,7 +13,8 @@ function viewModel() {
     self.addTD = function() {
         self.todos.push({ 
             item: $('#add').val(),
-            state: 'new'
+            state: 'new',
+            done: false
         });
         self.save();
     };
@@ -29,13 +30,14 @@ function viewModel() {
     
     self.doneTD = function(todo) {
         todo.state = 'done';
+        todo.done = true;
         self.history.push({
             item: todo.item,
             createdAt: null,
             startedAt: null,
             completedAt: null
         });
-        self.todos.remove(todo);
+        
         self.save();
         self.saveHistory();
     };
