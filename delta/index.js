@@ -46,6 +46,12 @@ function viewModel() {
     //value binding
     self.userName = ko.observable('');
     self.password = ko.observable('');
+
+    //check it binding
+    self.checkIt = ko.observable(true);
+    self.checkBox = function() {
+        self.checkIt(!self.checkIt());
+    }
 }
 
 ko.applyBindings(new viewModel());
