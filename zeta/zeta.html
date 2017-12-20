@@ -10,7 +10,12 @@
 </head>
 
 <body>
-
+    <h1 data-bind="changeColor: color">Custom Binding changeColor</h1>
+    <select data-bind="value: color">
+        <option value="black">Choose Color</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+    </select>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
