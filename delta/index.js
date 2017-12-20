@@ -46,6 +46,22 @@ function viewModel() {
     //value binding
     self.userName = ko.observable('');
     self.password = ko.observable('');
+
+    //check it binding
+    self.checkIt = ko.observable(true);
+    self.checkBox = function() {
+        self.checkIt(!self.checkIt());
+    };
+
+    //submit binding
+    self.submitMessage = ko.observable();
+    self.fireSubmit = function() {
+        self.submitMessage('Form submitted');
+    };
+
+    //enable - disable binding
+    self.isCompany = ko.observable(false);
+    self.companyName = "";
 }
 
 ko.applyBindings(new viewModel());
