@@ -23,4 +23,7 @@ body {
   height: 500px;
   background: white; }
 
+.completedTask {
+  background: gray; }
+
 /*# sourceMappingURL=style.css.map */

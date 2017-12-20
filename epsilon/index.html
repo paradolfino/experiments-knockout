@@ -12,7 +12,7 @@
 
 <body>
     <div id="header">
-        <h1>Arbejder Workflow Helper</h1>
+        <h1>Arbejder Workflow Helper <span data-bind="text: history.length"></span></h1>
     </div>
     <div id="main">
 
@@ -26,13 +26,13 @@
                 </thead>
                 <tbody data-bind="foreach: todos">
                     <tr>
-                        <td>
+                        <td data-bind="text: completed">
                             <span data-bind="text: item"></span>
                         </td>
                         <td>
                             <button data-bind="click: $parents[0].remTD" class="btn btn-danger">X</button>
                             <button data-bind="click: $parents[0].startTD" class="btn btn-primary">Clock In</button>
-                            <button data-bind="click: $parents[0].doneTD"" class="btn btn-success">Done</button>
+                            <button data-bind="click: $parents[0].doneTD" class="btn btn-success">Done</button>
                         </td>
                     </tr>
 
