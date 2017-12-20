@@ -51,6 +51,12 @@ function viewModel() {
     self.checkIt = ko.observable(true);
     self.checkBox = function() {
         self.checkIt(!self.checkIt());
+    };
+
+    //submit binding
+    self.submitMessage = ko.observable();
+    self.fireSubmit = function() {
+        self.submitMessage('Form submitted');
     }
 }
 
