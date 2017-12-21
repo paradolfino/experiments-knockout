@@ -10,11 +10,24 @@
 </head>
 
 <body>
-    
+    <ul data-bind="template: {name: 'categoryTemplate', foreach: categories, as: 'category'"></ul>
+    <script type="text/html" id="categoryTemplate">
+        <li>
+            <strong data-bind="text: name"></strong>
+            <ul data-bind="template: {name: 'subcategoryTemplate', foreach: subcategories, as: 'subcategory'}"></ul>
+        </li>
+    </script>
+    <script type="text/html" id="subcategoryTemplate">
+        <li>
+            <a data-bind="attr: {href: subcategory}">
+                <span data-bind="text: subcategory"></span>
+            </a>
+        </li>
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-    <script src="./zeta.js"></script>
+    <script src="./eta.js"></script>
 </body>
 
 </html>
