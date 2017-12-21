@@ -15,6 +15,10 @@ ko.bindingHandlers.textFadeIn = { //wrapper binding
 };
 
 ko.bindingHandlers.slideVisible = {
+    init: function(element, valueAccessor) {
+        var value = ko.unwrap(valueAccessor()); // Get the current value of the current property we're bound to
+        $(element).toggle(value); // jQuery will hide/show the element depending on whether "value" or true or false
+    },
     update: function(element, valueAccessor, allBindings) {
         // First get the latest data that we're bound to
         var value = valueAccessor();
@@ -37,7 +41,7 @@ function viewModel() {
     self = this;
     self.color = ko.observable();
     self.msg = ko.observable("A text fade in");
-    self.giftWrap = ko.observable(true);
+    self.giftWrap = ko.observable(false);
 }
 
 ko.applyBindings(new viewModel());
