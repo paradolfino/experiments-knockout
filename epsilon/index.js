@@ -1,6 +1,6 @@
 function viewModel() {
     const self = this;
-    const date = new Date();
+    let date;
 
     localStorage.clear();
     if (!localStorage){
