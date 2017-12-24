@@ -48,9 +48,6 @@ function viewModel() {
         localStorage.setItem('todos',JSON.stringify(self.todos()));
     }
 
-    self.saveHistory = function() {
-        localStorage.setItem('history',JSON.stringify(self.history));
-    };
 }
 
 let dataLayer = {
