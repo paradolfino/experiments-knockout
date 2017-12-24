@@ -30,15 +30,9 @@ function viewModel() {
     self.doneTD = function(todo) {
         todo.state = 'done';
         todo.done = true;
-        self.history.push({
-            item: todo.item,
-            createdAt: null,
-            startedAt: null,
-            completedAt: null
-        });
+        
         
         self.save();
-        self.saveHistory();
     };
     
 
