@@ -12,6 +12,7 @@ function viewModel() {
     
     //basic functions
     self.addTD = function() {
+        date = new Date();
         self.todos.push({ 
             item: $('#add').val(),
             state: 'new',
@@ -27,10 +28,12 @@ function viewModel() {
     
     //additional option functions
     self.startTD = function(todo) {
+        date = new Date();
         todo.state = 'started';
     };
     
     self.doneTD = function(todo) {
+        date = new Date();
         todo.state = 'done';
         todo.done = true;
         self.todos.remove(todo);
