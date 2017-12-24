@@ -30,8 +30,7 @@ function viewModel() {
     self.doneTD = function(todo) {
         todo.state = 'done';
         todo.done = true;
-        
-        
+        self.todos.remove(todo);
         self.save();
     };
     
