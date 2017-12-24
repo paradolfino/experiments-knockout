@@ -1,8 +1,1 @@
-TODO:
-1. Instead of simply deleting a task once hitting DONE, remove but count it? Add to history?
-2. Capture date/time of task creation, of task clock in, and of task completion (set up history observableArray)
-
-DOING:
-1
-
-DONE:
+Need to figure out how to bind properties of a todo instance to observables and show changes on the view when corresponding buttons are pushed.

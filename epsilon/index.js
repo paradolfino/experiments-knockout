@@ -1,19 +1,24 @@
 function viewModel() {
     const self = this;
+    let date;
+
     localStorage.clear();
-    self.history = [];
     if (!localStorage){
         self.todos = ko.observableArray([]);
     } else {
-        self.history ? self.histories = self.history.length : self.histories = 0;
+        
         self.todos = ko.observableArray(JSON.parse(localStorage.getItem('todos')));
     }
     
     //basic functions
     self.addTD = function() {
+        date = new Date();
         self.todos.push({ 
             item: $('#add').val(),
             state: 'new',
+            created: date.toLocaleString(),
+            started: ko.observable(''),
+            completed: ko.observable(''),
             done: false
         });
         self.save();
@@ -25,21 +30,19 @@ function viewModel() {
     
     //additional option functions
     self.startTD = function(todo) {
+        
+        date = new Date();
         todo.state = 'started';
+        todo.started('date.toLocaleString()');
+        console.log('start', todo);
     };
     
     self.doneTD = function(todo) {
+        date = new Date();
         todo.state = 'done';
         todo.done = true;
-        self.history.push({
-            item: todo.item,
-            createdAt: null,
-            startedAt: null,
-            completedAt: null
-        });
-        
+        todo.completed(date.toLocaleString());
         self.save();
-        self.saveHistory();
     };
     
 
@@ -48,9 +51,6 @@ function viewModel() {
         localStorage.setItem('todos',JSON.stringify(self.todos()));
     }
 
-    self.saveHistory = function() {
-        localStorage.setItem('history',JSON.stringify(self.history));
-    };
 }
 
 let dataLayer = {
