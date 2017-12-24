@@ -39,6 +39,7 @@ function viewModel() {
         date = new Date();
         todo.state = 'done';
         todo.done = true;
+        todo.completed = date.toLocaleString();
         self.save();
     };
     
