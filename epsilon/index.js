@@ -17,6 +17,8 @@ function viewModel() {
             item: $('#add').val(),
             state: 'new',
             created: date.toLocaleString(),
+            started: null,
+            completed: null
             done: false
         });
         self.save();
