@@ -1,5 +1,7 @@
 function viewModel() {
     const self = this;
+    const date = new Date();
+
     localStorage.clear();
     if (!localStorage){
         self.todos = ko.observableArray([]);
