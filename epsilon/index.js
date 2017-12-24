@@ -17,8 +17,8 @@ function viewModel() {
             item: $('#add').val(),
             state: 'new',
             created: date.toLocaleString(),
-            started: ko.observable(null),
-            completed: ko.observable(null),
+            started: ko.observable(),
+            completed: ko.observable(),
             done: false
         });
         self.save();
