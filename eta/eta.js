@@ -8,4 +8,4 @@ var viewModel = {
     ])
 }
 
-ko.applyBindings(viewModel());
+ko.applyBindings(viewModel);
