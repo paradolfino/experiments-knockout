@@ -36,7 +36,6 @@ function viewModel() {
         date = new Date();
         todo.state = 'done';
         todo.done = true;
-        self.todos.remove(todo);
         self.save();
     };
     
