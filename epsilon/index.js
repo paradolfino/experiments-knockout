@@ -30,7 +30,7 @@ function viewModel() {
     
     //additional option functions
     self.startTD = function(todo) {
-        console.log('start');
+        console.log('start', todo);
         date = new Date();
         todo.state = 'started';
         todo.started(date.toLocaleString());
