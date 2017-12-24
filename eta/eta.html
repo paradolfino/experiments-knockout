@@ -27,7 +27,18 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-    <script src="./eta.js"></script>
+    <!--<script src="./eta.js"></script>-->
+    <script>
+        var viewModel = {
+            categories: ko.observableArray([
+                { name: 'Technology', subcategories: ['Programming', 'Hardware', 'Web Development'] },
+                { name: 'Business', subcategories: ['Finance', 'Marketing', 'Stocks'] },
+                { name: 'Food', subcategories: ['Restaurang', 'Katerer', 'Market'] }
+            ])
+        }
+
+        ko.applyBindings(viewModel);
+    </script>
 </body>
 
 </html>
