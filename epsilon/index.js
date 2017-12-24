@@ -1,11 +1,10 @@
 function viewModel() {
     const self = this;
     localStorage.clear();
-    self.history = [];
     if (!localStorage){
         self.todos = ko.observableArray([]);
     } else {
-        self.history ? self.histories = self.history.length : self.histories = 0;
+        
         self.todos = ko.observableArray(JSON.parse(localStorage.getItem('todos')));
     }
     
