@@ -15,6 +15,7 @@ function viewModel() {
         self.todos.push({ 
             item: $('#add').val(),
             state: 'new',
+            created: date.toLocaleString(),
             done: false
         });
         self.save();
