@@ -18,7 +18,7 @@ function viewModel() {
             state: 'new',
             created: date.toLocaleString(),
             started: null,
-            completed: null
+            completed: null,
             done: false
         });
         self.save();
