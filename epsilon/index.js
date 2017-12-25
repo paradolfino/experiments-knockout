@@ -33,7 +33,7 @@ function viewModel() {
         
         date = new Date();
         todo.state = 'started';
-        todo.started('date.toLocaleString()');
+        todo.started(date.toLocaleString());
         console.log('start', todo);
     };
     
