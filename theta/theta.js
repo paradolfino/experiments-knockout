@@ -10,7 +10,7 @@ viewModel.categoriesAlt = ko.computed(function(){
         {name: 'Food'},
         {name: 'Construction'}
     ]);
-});
+}, viewModel);
 
 $(function(){
     ko.applyBindings(viewModel);
