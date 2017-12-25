@@ -1,2 +1,3 @@
 24/12/2017 19:59:pool[yb7d4i]: practice with underscore templating
 24/12/2017 21:24:pool[myx647]: fix startTD, doneTD - bind to span in view to show when each action is taken with date.toLocaleString()
+24/12/2017 21:31:pool[i060lw]: modify started and completed observables to show getHours/Minutes instead of toLocalString on startTD and doneTD
