@@ -2,7 +2,8 @@ var viewModel = {
     categories: ko.observableArray([
         {name: 'Technology'},
         {name: 'Business'}
-    ])
+    ]),
+    newCategory: ko.observable()
 }
 
 viewModel.categoriesAlt = ko.computed(function(){
