@@ -14,5 +14,8 @@ viewModel.categoriesAlt = ko.computed(function(){
 
 $(function(){
     ko.applyBindings(viewModel);
+    $('#addBtn').click(function(){
+
+    });
 });
 
