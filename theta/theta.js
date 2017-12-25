@@ -1,7 +1,11 @@
 var viewModel = {
     categories: ko.observableArray([
-        
+        {name: 'Technology'},
+        {name: 'Business'}
     ])
 }
 
-ko.applyBindings(viewModel);
+$(function(){
+    ko.applyBindings(viewModel);
+});
+
