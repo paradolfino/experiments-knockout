@@ -16,7 +16,7 @@ function viewModel() {
         self.todos.push({ 
             item: $('#add').val(),
             state: 'new',
-            created: `${date.getHours()}:${date.Minutes()}`,
+            created: `${date.getHours()}:${date.getMinutes()}`,
             started: ko.observable(''),
             completed: ko.observable(''),
             done: false
@@ -32,14 +32,14 @@ function viewModel() {
     self.startTD = function(todo) {
         date = new Date();
         todo.state = 'started';
-        todo.started(`${date.getHours()}:${date.Minutes()}`);
+        todo.started(`${date.getHours()}:${date.getMinutes()}`);
     };
     
     self.doneTD = function(todo) {
         date = new Date();
         todo.state = 'done';
         todo.done = true;
-        todo.completed(`${date.getHours()}:${date.Minutes()}`);
+        todo.completed(`${date.getHours()}:${date.getMinutes()}`);
         self.save();
     };
     
