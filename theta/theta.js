@@ -5,6 +5,13 @@ var viewModel = {
     ])
 }
 
+viewModel.categoriesAlt = ko.computed(function(){
+    return this.categories.union([
+        {name: 'Food'},
+        {name: 'Construction'}
+    ]);
+});
+
 $(function(){
     ko.applyBindings(viewModel);
 });
