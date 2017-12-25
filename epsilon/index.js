@@ -30,18 +30,16 @@ function viewModel() {
     
     //additional option functions
     self.startTD = function(todo) {
-        
         date = new Date();
         todo.state = 'started';
-        todo.started('date.toLocaleString()');
-        console.log('start', todo);
+        todo.started(`${date.getHours()}:${date.getMinutes()}`);
     };
     
     self.doneTD = function(todo) {
         date = new Date();
         todo.state = 'done';
         todo.done = true;
-        todo.completed(date.toLocaleString());
+        todo.completed(`${date.getHours()}:${date.getMinutes()}`);
         self.save();
     };
     
