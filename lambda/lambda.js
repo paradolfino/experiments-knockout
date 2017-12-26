@@ -6,3 +6,5 @@ function viewModel() {
         return self.firstName + " " + self.lastName;
     });
 }
+
+ko.applyBindings(new viewModel());
