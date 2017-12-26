@@ -1,6 +1,7 @@
 ko.components.register('newsletter-widget', {
     viewModel: function() {
-
+        this.email = ko.observable();
+        this.showMessage = ko.observable(false);
     },
     template: '<h3>Subscribe to our newsletter</h3>\
     <form data-bind="submit:submitForm">\
