@@ -10,3 +10,5 @@ ko.components.register('newsletter-widget', {
     <p data-bind="visible: showMessage">Thanks For Subscribing: <strong><span data-bind="text: email"</span></strong></p>\
     '
 });
+
+ko.applyBindings();
