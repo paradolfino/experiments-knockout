@@ -7,8 +7,7 @@ ko.components.register('newsletter-widget', {
         <input data-bind="value: email"/>\
         <button type="submit">Submit</button>\
     </form>\
-    <p data-bind="visible: showMessage">Thanks For Subscribing: <strong><span data-bind="text: email"</span></strong></p>\
-    '
+    <p data-bind="visible: showMessage">Thanks For Subscribing: <strong><span data-bind="text: email"</span></strong></p>'
 });
 
 ko.applyBindings();
