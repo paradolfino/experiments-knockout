@@ -3,7 +3,7 @@ function viewModel() {
     self.firstName = ko.observable("Matt");
     self.lastName = ko.observable("Daemon");
     self.fullName = ko.computed(function(){
-        self.firstName + " " + self.lastName;
+        return self.firstName() + " " + self.lastName();
     });
 }
 
