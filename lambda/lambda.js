@@ -11,6 +11,8 @@ function viewModel() {
         },
         write: function(val) {
             var value = val.split(' ');
+            self.firstName(value[0]);
+            self.lastName(value[1]);
         }
     });
 }
