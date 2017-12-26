@@ -18,3 +18,10 @@ function viewModel() {
 }
 
 ko.applyBindings(new viewModel());
+
+/*
+    helpful methods:
+    ko.isComputed();
+    ko.isObservable();
+    ko.isWriteableObservable();
+*/
