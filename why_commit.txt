@@ -4,3 +4,4 @@
 25/12/2017 20:22:pool[4qbsr5]: practice with creating and rendering custom elements
 25/12/2017 21:16:pool[084uvn]: begin going through knockout basics again for practice - start with computed observables
 26/12/2017 20:15:pool[pretty-shining-river-1eu375]: practice component binding
+26/12/2017 20:35:pool[brilliant-steaming-rabbit-chu71f]: begin work on gt app: set up dependencies, set up app.js, begin addition of routes, complete get, begin post
