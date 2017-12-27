@@ -14,7 +14,7 @@ function viewModel() {
     self.addTD = function() {
         date = new Date();
         self.todos.push({ 
-            item: $('#add').val(),
+            item: ko.observable($('#add').val()),
             state: 'new',
             created: date.toLocaleString(),
             started: ko.observable(''),
@@ -39,7 +39,9 @@ function viewModel() {
         date = new Date();
         todo.state = 'done';
         todo.done = true;
+        todo.item(todo.item()+" "+"(COMPLETED)");
         todo.completed(`${date.getHours()}:${date.getMinutes()}`);
+        $('#todo_'+todo.item).css('background','red');
         self.save();
     };
     
