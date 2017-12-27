@@ -13,6 +13,17 @@ app.get('/', function(req, res){
     res.send('Hi');
 });
 
+app.get('/goals', function(req, res){
+    db.goals.find(function(err, docs){
+        if(err) {
+            res.send(err);
+        } else {
+            console.log('Getting goals...');
+            res.json(docs);
+        }
+    });
+});
+
 app.listen(PORT, function(){
     console.log('Running on',PORT);
 });
