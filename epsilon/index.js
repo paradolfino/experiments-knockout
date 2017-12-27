@@ -42,7 +42,7 @@ function viewModel() {
         todo.item(todo.item()+" "+"(COMPLETED)");
         todo.completed(`${date.getHours()}:${date.getMinutes()}`);
         $('#todo_'+todo.item).css({
-            'background': 'gray',
+            'background': 'darkgray',
             'color': 'red'
         });
         self.save();
