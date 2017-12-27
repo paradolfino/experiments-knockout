@@ -24,6 +24,10 @@ app.get('/goals', function(req, res){
     });
 });
 
+app.post('/goals', function(req, res) {
+
+});
+
 app.listen(PORT, function(){
     console.log('Running on',PORT);
 });
