@@ -14,5 +14,5 @@ app.get('/', function(res,req){
 });
 
 app.listen(PORT, function(){
-    console.log('Running');
+    console.log('Running on',PORT);
 });
