@@ -7,3 +7,11 @@ var db = mongojs('goaltracker',['goals']);
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'client')));
+
+app.get('/', function(res,req){
+    res.send('Hi');
+});
+
+app.listen(3000, function(){
+    console.log('Running');
+});
