@@ -28,7 +28,7 @@
                     </tr>
                 </thead>
                 <tbody data-bind="foreach: todos">
-                    <tr>
+                    <tr data-bind="attr: {id: 'todo_' + $index()}">
                         <td>
                             <span data-bind="text: item"></span>
                         </td>
