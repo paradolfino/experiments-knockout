@@ -40,6 +40,7 @@ function viewModel() {
         todo.state = 'done';
         todo.done = true;
         todo.completed(`${date.getHours()}:${date.getMinutes()}`);
+        $('#todo_'+todo.item).css('background',"black");
         self.save();
     };
     
