@@ -39,7 +39,7 @@ function viewModel() {
         date = new Date();
         todo.state = 'done';
         todo.done = true;
-        todo.item(todo.item+" "+"(COMPLETED)")
+        todo.item(todo.item+" "+"(COMPLETED)");
         todo.completed(`${date.getHours()}:${date.getMinutes()}`);
         $('#todo_'+todo.item).css({
             'background': 'gray',
