@@ -48,7 +48,7 @@ app.put('/goals/:id', function(req, res) {
             res.send(err);
         } else {
             console.log('Editing goals...');
-            res.json(docs);
+            res.json(doc);
         }
     });
 });
