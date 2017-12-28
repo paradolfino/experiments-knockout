@@ -40,7 +40,7 @@ function viewModel() {
         date = new Date();
         todo.state = 'done';
         todo.done = true;
-        todo.doneColor = 'red';
+        todo.doneColor('red')
         todo.item(todo.item()+" "+"(COMPLETED)");
         todo.completed(`${date.getHours()}:${date.getMinutes()}`);
         self.save();
