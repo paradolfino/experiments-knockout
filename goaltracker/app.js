@@ -35,6 +35,17 @@ app.post('/goals', function(req, res) {
     });
 });
 
+app.put('/goals/:id', function(req, res) {
+    db.goals.findAndModify({query:{_id: mongojs.ObjectId(req.params.id)}}, function(){
+        if(err) {
+            res.send(err);
+        } else {
+            console.log('Editing goals...');
+            res.json(docs);
+        }
+    });
+});
+
 app.listen(PORT, function(){
     console.log('Running on',PORT);
 });
