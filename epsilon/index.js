@@ -35,13 +35,12 @@ function viewModel() {
         todo.started(`${date.getHours()}:${date.getMinutes()}`);
     };
     
-    self.doneTD = function(todo, index) {
+    self.doneTD = function(todo) {
         date = new Date();
         todo.state = 'done';
         todo.done = true;
         todo.item(todo.item()+" "+"(COMPLETED)");
         todo.completed(`${date.getHours()}:${date.getMinutes()}`);
-        $('#todo_'+index).css('background','red');
         self.save();
     };
     

@@ -28,14 +28,14 @@
                     </tr>
                 </thead>
                 <tbody data-bind="foreach: todos">
-                    <tr data-bind="attr: {id: 'todo_' + $index}">
+                    <tr data-bind="style: { background: $data.done == true ? 'red' : 'black' }">
                         <td>
                             <span data-bind="text: item"></span>
                         </td>
                         <td>
                             <button data-bind="click: $parents[0].remTD" class="btn btn-danger">X</button>
                             <button data-bind="click: $parents[0].startTD" class="btn btn-primary">Clock In</button>
-                            <button data-bind="click: $parents[0].doneTD($data, $index)" class="btn btn-success">Done</button>
+                            <button data-bind="click: $parents[0].doneTD" class="btn btn-success">Done</button>
                         </td>
                         <td>
                             <span data-bind="text: created"></span>
