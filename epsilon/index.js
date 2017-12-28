@@ -19,7 +19,8 @@ function viewModel() {
             created: date.toLocaleString(),
             started: ko.observable(''),
             completed: ko.observable(''),
-            done: false
+            done: false,
+            doneColor: ko.observable('black');
         });
         self.save();
     };
