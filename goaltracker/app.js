@@ -54,7 +54,7 @@ app.put('/goals/:id', function(req, res) {
 });
 
 app.delete('/goals/:id', function(req, res) {
-    db.goals.remove({_id: mongojs.ObjectId(req.params.id)}, function(){
+    db.goals.remove({_id: mongojs.ObjectId(req.params.id)}, function(err,docs){
         if(err) {
             res.send(err);
         } else {
