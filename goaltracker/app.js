@@ -53,6 +53,17 @@ app.put('/goals/:id', function(req, res) {
     });
 });
 
+app.delete('/goals/:id', function(req, res) {
+    db.goals.remove({_id: mongojs.ObjectId(req.params.id)}, function(){
+        if(err) {
+            res.send(err);
+        } else {
+            console.log('Removing goals...');
+            res.json(docs);
+        }
+    });
+});
+
 app.listen(PORT, function(){
     console.log('Running on',PORT);
 });
