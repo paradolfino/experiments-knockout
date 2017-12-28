@@ -19,7 +19,7 @@ function viewModel() {
             created: date.toLocaleString(),
             started: ko.observable(''),
             completed: ko.observable(''),
-            done: ko.observable(false),
+            visible: ko.observable(true),
             doneColor: ko.observable('black')
         });
         self.save();
@@ -39,7 +39,7 @@ function viewModel() {
     self.doneTD = function(todo) {
         date = new Date();
         todo.state = 'done';
-        todo.done(true);
+        todo.visible(false);
         todo.doneColor('red');
         todo.item(todo.item()+" "+"(COMPLETED)");
         todo.completed(`${date.getHours()}:${date.getMinutes()}`);
