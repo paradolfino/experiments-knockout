@@ -30,7 +30,7 @@
                 <tbody data-bind="foreach: todos">
                     <tr>
                         <td>
-                            <span data-bind="text: item,  style: { background: $data.done == true ? $data.doneColor('red') : $data.doneColor('black') }"></span>
+                            <span data-bind="text: item,  style: { color: done == true ? doneColor('red') : doneColor('black') }"></span>
                         </td>
                         <td>
                             <button data-bind="click: $parents[0].remTD" class="btn btn-danger">X</button>
