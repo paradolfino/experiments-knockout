@@ -36,7 +36,14 @@ app.post('/goals', function(req, res) {
 });
 
 app.put('/goals/:id', function(req, res) {
-    db.goals.findAndModify({query:{_id: mongojs.ObjectId(req.params.id)}}, function(){
+    db.goals.findAndModify({query:{_id: mongojs.ObjectId(req.params.id)}},
+    update:{ $set: {
+        name: req.body.name,
+        type: req.body.type,
+        deadline: req.body.deadline
+    }},
+    new: true,
+    function(err,doc){
         if(err) {
             res.send(err);
         } else {
