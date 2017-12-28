@@ -25,7 +25,14 @@ app.get('/goals', function(req, res){
 });
 
 app.post('/goals', function(req, res) {
-
+    db.goals.insert(req.body, function(){
+        if(err) {
+            res.send(err);
+        } else {
+            console.log('Setting goals...');
+            res.json(docs);
+        }
+    });
 });
 
 app.listen(PORT, function(){
