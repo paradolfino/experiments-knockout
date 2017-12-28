@@ -1,0 +1,30 @@
+body {
+    font-family: Courier;
+    background: #076585;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fff, #076585);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fff, #076585); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+#header {
+    margin-bottom: 50px;
+    background: white;
+    border: 1px solid gray;
+}
+
+#main {
+    margin: 0 auto;
+    height: 500px;
+    width: 70%;
+    background: white;
+    border: 1px solid gray;
+}
+
+#container {
+    height: 500px;
+    background: white;
+}
+
+.completedTask {
+    background: gray;
+}

@@ -1,0 +1,1 @@
+Need to figure out how to bind properties of a todo instance to observables and show changes on the view when corresponding buttons are pushed.

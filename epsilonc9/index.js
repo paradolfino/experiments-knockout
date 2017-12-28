@@ -2,13 +2,13 @@ function viewModel() {
     const self = this;
     let date;
 
-    localStorage.clear();
+    /*localStorage.clear();
     if (!localStorage){
         self.todos = ko.observableArray([]);
     } else {
         
         self.todos = ko.observableArray(JSON.parse(localStorage.getItem('todos')));
-    }
+    }*/
     
     //basic functions
     self.addTD = function() {
@@ -48,7 +48,8 @@ function viewModel() {
 
     //database
     self.save = function() {
-        localStorage.setItem('todos',JSON.stringify(self.todos()));
+        console.log("on c9, no local storage");
+        //localStorage.setItem('todos',JSON.stringify(self.todos()));
     }
 
 }
