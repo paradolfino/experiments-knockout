@@ -20,7 +20,7 @@ function viewModel() {
             started: ko.observable(''),
             completed: ko.observable(''),
             done: false,
-            doneColor: ko.observable('black');
+            doneColor: ko.observable('black')
         });
         self.save();
     };
