@@ -6,3 +6,4 @@
 26/12/2017 20:15:pool[pretty-shining-river-1eu375]: practice component binding
 26/12/2017 20:35:pool[brilliant-steaming-rabbit-chu71f]: begin work on gt app: set up dependencies, set up app.js, begin addition of routes, complete get, begin post
 26/12/2017 21:43:pool[peaceful-baking-hills-0xq2p1]: work on dynamically binding css to each unique task added. also added complete text upon doneTD. next have to make done button disabled upon complete
+27/12/2017 20:20:pool[happy-flying-cows-u4x776]: add all REST routes to app.js
