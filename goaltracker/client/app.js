@@ -21,6 +21,15 @@ function ViewModel() {
             type: type,
             deadline: deadline
         });
+
+        $.ajax({
+            url: "http://localhost:3000/goals",
+            data: JSON.stringify({
+                "name": name,
+                "type": type,
+                "deadline": deadline
+            })
+        })
     }
 
     self.types = ko.observableArray(['Health','Fitness','Professional','Relationships','Self Help']);
