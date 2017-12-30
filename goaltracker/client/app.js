@@ -9,6 +9,6 @@ function viewModel() {
     self.goals = ko.observableArray();
 }
 
-var viewModel = new viewModel();
+var viewModel = new ViewModel();
 
 ko.applyBindings(viewModel);
