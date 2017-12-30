@@ -16,6 +16,8 @@ function ViewModel() {
         var deadline =  $("#deadline").val();
         console.log(name, type, deadline);
     }
+
+    self.types = ko.observableArray(['Health','Fitness','Professional','Relationships','Self Help']);
 }
 
 var viewModel = new ViewModel();
