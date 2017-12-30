@@ -3,3 +3,8 @@ function getGoals() {
         viewModel.goals(data);
     });
 }
+
+function viewModel() {
+    var self = this;
+    
+}
