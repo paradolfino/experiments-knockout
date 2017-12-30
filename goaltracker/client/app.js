@@ -8,3 +8,7 @@ function viewModel() {
     var self = this;
     self.goals = ko.observableArray();
 }
+
+var viewModel = new viewModel();
+
+ko.applyBindings(new viewModel());
