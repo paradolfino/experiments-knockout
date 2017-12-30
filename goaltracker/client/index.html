@@ -56,14 +56,14 @@
                             <th>Deadline</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody data-bind="foreach: goals">
                         <tr>
                             <td>
                                 <input type="checkbox" />
                             </td>
-                            <td>NAME</td>
-                            <td>TYPE</td>
-                            <td>DEADLINE</td>
+                            <td data-bind="text: name"></td>
+                            <td data-bind="text: type"></td>
+                            <td data-bind="text: deadline"></td>
                         </tr>
                     </tbody>
                 </table>
