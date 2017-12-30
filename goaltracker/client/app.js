@@ -6,5 +6,5 @@ function getGoals() {
 
 function viewModel() {
     var self = this;
-    
+    self.goals = ko.observableArray();
 }
