@@ -14,6 +14,7 @@ function ViewModel() {
         var name =  $("#name").val();
         var type =  $("#type").val();
         var deadline =  $("#deadline").val();
+        console.log(name, type, deadline);
     }
 }
 
