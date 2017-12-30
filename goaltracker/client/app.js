@@ -28,7 +28,9 @@ function ViewModel() {
                 "name": name,
                 "type": type,
                 "deadline": deadline
-            })
+            }),
+            type: 'POST',
+            contentType: 'application/json'
         })
     }
 
