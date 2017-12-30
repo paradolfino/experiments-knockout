@@ -31,7 +31,7 @@ function ViewModel() {
             }),
             type: 'POST',
             contentType: 'application/json'
-        })
+        });
     }
 
     self.types = ko.observableArray(['Health','Fitness','Professional','Relationships','Self Help']);
