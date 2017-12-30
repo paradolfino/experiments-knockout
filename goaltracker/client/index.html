@@ -31,16 +31,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <input type="text" id="name" class="form-control" placeholder="Enter Goal" />
+                <input data-bind="value: goalInputName" type="text" id="name" class="form-control" placeholder="Enter Goal" />
             </div>
             <div class="col-md-3">
-                <select id="type" class="form-control"></select>
+                <select data-bind="value: goalInputType" id="type" class="form-control"></select>
             </div>
             <div class="col-md-3">
-                <input type="date" id="deadlone" class="form-control" />
+                <input data-bind="value: goalInputDeadline" type="date" id="deadlone" class="form-control" />
             </div>
             <div class="col-md-3">
-                <button class="btn btn-primary">Add Goal</button>
+                <button data-bind="click: addGoal" class="btn btn-primary">Add Goal</button>
                 <button class="btn btn-primary">Delete Goal</button>
             </div>
         </div>
