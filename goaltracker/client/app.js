@@ -4,7 +4,7 @@ function getGoals() {
     });
 }
 
-function viewModel() {
+function ViewModel() {
     var self = this;
     self.goals = ko.observableArray();
 }
