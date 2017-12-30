@@ -10,6 +10,9 @@ function ViewModel() {
     self.goalInputName = ko.observable();
     self.goalInputType = ko.observable();
     self.goalInputDeadline = ko.observable();
+    self.addGoal = function() {
+        
+    }
 }
 
 var viewModel = new ViewModel();
