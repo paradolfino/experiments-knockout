@@ -15,6 +15,12 @@ function ViewModel() {
         var type =  $("#type").val();
         var deadline =  $("#deadline").val();
         console.log(name, type, deadline);
+
+        self.goals.push({
+            name: name,
+            type: type,
+            deadline: deadline
+        });
     }
 
     self.types = ko.observableArray(['Health','Fitness','Professional','Relationships','Self Help']);
