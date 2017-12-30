@@ -10,3 +10,4 @@
 27/12/2017 20:29:pool[peaceful-shining-rabbits-015k8p]: begin work on front end with add bootstrap nav, striped table and placeholder information
 
 27/12/2017 21:21:pool[brilliant-shining-horses-j81856]: wire styline to text based on whether or not completed with observable. wire visibility of done and clock in buttons based on observable too - yay!
+29/12/2017 20:55:pool[happy-baking-horses-374cw3]: add viewmodel, add ui, add ajax post, full function add/sync with database
