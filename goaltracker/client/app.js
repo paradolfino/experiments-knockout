@@ -11,7 +11,9 @@ function ViewModel() {
     self.goalInputType = ko.observable();
     self.goalInputDeadline = ko.observable();
     self.addGoal = function() {
-        
+        var name =  $("#name").val();
+        var type =  $("#type").val();
+        var deadline =  $("#deadline").val();
     }
 }
 
