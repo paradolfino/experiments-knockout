@@ -68,7 +68,33 @@ function ViewModel() {
     }
 
     self.updateGoal = function() {
-        
+        var name =  $("#name").val();
+        var type =  $("#type").val();
+        var deadline =  $("#deadline").val();
+        console.log(name, type, deadline);
+
+        self.goals.push({
+            name: name,
+            type: type,
+            deadline: deadline
+        });
+
+        $.ajax({
+            url: "http://localhost:3000/goals",
+            data: JSON.stringify({
+                "name": name,
+                "type": type,
+                "deadline": deadline
+            }),
+            type: 'POST',
+            contentType: 'application/json',
+            success: function(data) {
+                console.log('Goal added');
+            },
+            error: function(xhr, status, err) {
+                console.log(err);
+            }
+        });
     }
 
     self.editSelected = function() {
