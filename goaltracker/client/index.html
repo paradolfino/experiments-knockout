@@ -59,7 +59,7 @@
                     <tbody data-bind="foreach: goals">
                         <tr>
                             <td>
-                                <input type="checkbox" />
+                                <input data-bind="value: $data, checked: selectedGoals" type="checkbox" />
                             </td>
                             <td data-bind="text: name"></td>
                             <td data-bind="text: type"></td>
