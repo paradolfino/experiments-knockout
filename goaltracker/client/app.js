@@ -67,6 +67,7 @@ function ViewModel() {
 
     self.editSelected = function() {
         self.updateId = self.selectedGoals()[0]._id;
+        var name = self.selectedGoals()[0].name;
     }
 
     self.types = ko.observableArray(['Health','Fitness','Professional','Relationships','Self Help']);
