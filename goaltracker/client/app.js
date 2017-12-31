@@ -12,6 +12,7 @@ function ViewModel() {
     self.goalInputDeadline = ko.observable();
     self.selectedGoals = ko.observableArray();
     self.isUpdate = ko.observable(false);
+    self.updateId = ko.observable();
     self.canEdit = ko.computed(function(){
         return self.selectedGoals().length > 0;
     });
