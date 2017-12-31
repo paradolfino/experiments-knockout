@@ -41,7 +41,7 @@
             </div>
             <div class="col-md-3">
                 <button data-bind="click: addGoal, enable: goalInputName" class="btn btn-primary">Add Goal</button>
-                <button data-bind="enable: canEdit" class="btn btn-primary">Delete Goal</button>
+                <button data-bind="enable: canEdit, click: deleteSelected" class="btn btn-primary">Delete Goal</button>
             </div>
         </div>
         <br><br>
