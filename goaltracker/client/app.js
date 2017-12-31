@@ -10,6 +10,7 @@ function ViewModel() {
     self.goalInputName = ko.observable();
     self.goalInputType = ko.observable();
     self.goalInputDeadline = ko.observable();
+    self.selectedGoals = ko.observableArray([]);
     self.canEdit = ko.computed(function(){
         return self.selectedGoals().length > 0;
     });
