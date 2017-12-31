@@ -45,6 +45,12 @@ function ViewModel() {
         });
     }
 
+    self.deleteSelected = function() {
+        $.each(self.selectedGoals(), function(index, value){
+            var id = self.selectedGoals()[index]._id;
+        });
+    }
+
     self.types = ko.observableArray(['Health','Fitness','Professional','Relationships','Self Help']);
 }
 
