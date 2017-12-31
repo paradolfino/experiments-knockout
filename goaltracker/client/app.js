@@ -74,6 +74,10 @@ function ViewModel() {
         var deadline =  $("#deadline").val();
         console.log(name, type, deadline);
 
+        self.goals.remove(function(item){
+            return item._id == id;
+        });
+
         self.goals.push({
             name: name,
             type: type,
