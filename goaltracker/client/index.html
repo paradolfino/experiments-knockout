@@ -41,6 +41,7 @@
             </div>
             <div class="col-md-3">
                 <button data-bind="click: addGoal, enable: goalInputName" class="btn btn-primary">Add Goal</button>
+                <button data-bind="click: updateGoal, enable: goalInputName, visible: isUpdate" class="btn btn-primary">Update Goal</button>
                 <button data-bind="enable: canEdit, click: editSelected" class="btn btn-info">Edit Goal</button>
                 <button data-bind="enable: canEdit, click: deleteSelected" class="btn btn-danger">Delete Goal</button>
             </div>
