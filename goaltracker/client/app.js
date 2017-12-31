@@ -94,7 +94,7 @@ function ViewModel() {
             type: 'PUT',
             contentType: 'application/json',
             success: function(data) {
-                console.log('Goal added');
+                console.log('Goal Updated');
             },
             error: function(xhr, status, err) {
                 console.log(err);
