@@ -70,6 +70,8 @@ function ViewModel() {
         var name = self.selectedGoals()[0].name;
         var type = self.selectedGoals()[0].type;
         var deadline = self.selectedGoals()[0].deadline;
+
+        self.isUpdate(true);
     }
 
     self.types = ko.observableArray(['Health','Fitness','Professional','Relationships','Self Help']);
