@@ -65,8 +65,8 @@ function ViewModel() {
         self.selectedGoals.removeAll();
     }
 
-    self.updateSelected = function() {
-        
+    self.editSelected = function() {
+
     }
 
     self.types = ko.observableArray(['Health','Fitness','Professional','Relationships','Self Help']);
