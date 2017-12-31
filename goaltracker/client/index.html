@@ -31,7 +31,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <input data-bind="value: goalInputName" type="text" id="name" class="form-control" placeholder="Enter Goal" />
+                <input data-bind="value: goalInputName, valueUpdate: 'keypress'" type="text" id="name" class="form-control" placeholder="Enter Goal" />
             </div>
             <div class="col-md-3">
                 <select data-bind="value: goalInputType, options: types, optionsCaption: 'Choose Type'" id="type" class="form-control"></select>
@@ -40,8 +40,10 @@
                 <input data-bind="value: goalInputDeadline" type="date" id="deadline" class="form-control" />
             </div>
             <div class="col-md-3">
-                <button data-bind="click: addGoal" class="btn btn-primary">Add Goal</button>
-                <button class="btn btn-primary">Delete Goal</button>
+                <button data-bind="click: addGoal, enable: goalInputName, visible: !isUpdate()" class="btn btn-primary">Add Goal</button>
+                <button data-bind="click: updateGoal, enable: goalInputName, visible: isUpdate" class="btn btn-primary">Update Goal</button>
+                <button data-bind="enable: canEdit, click: editSelected" class="btn btn-info">Edit Goal</button>
+                <button data-bind="enable: canEdit, click: deleteSelected" class="btn btn-danger">Delete Goal</button>
             </div>
         </div>
         <br><br>
@@ -59,7 +61,7 @@
                     <tbody data-bind="foreach: goals">
                         <tr>
                             <td>
-                                <input type="checkbox" />
+                                <input data-bind="value: $data, checked: $parents[0].selectedGoals" type="checkbox" />
                             </td>
                             <td data-bind="text: name"></td>
                             <td data-bind="text: type"></td>
