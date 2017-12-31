@@ -48,6 +48,18 @@ function ViewModel() {
     self.deleteSelected = function() {
         $.each(self.selectedGoals(), function(index, value){
             var id = self.selectedGoals()[index]._id;
+            $.ajax({
+                url: "http://localhost:3000/goals/" + id,
+                type: 'DELETE',
+                async: true,
+                timeout: 300000,
+                success: function(data) {
+                    console.log('Goal added');
+                },
+                error: function(xhr, status, err) {
+                    console.log(err);
+                }
+            });
         });
     }
 
