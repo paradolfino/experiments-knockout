@@ -54,7 +54,7 @@ function ViewModel() {
                 async: true,
                 timeout: 300000,
                 success: function(data) {
-                    console.log('Goal added');
+                    console.log('Goal(s) deleted');
                 },
                 error: function(xhr, status, err) {
                     console.log(err);
