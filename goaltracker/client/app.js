@@ -85,7 +85,7 @@ function ViewModel() {
         });
 
         $.ajax({
-            url: "http://localhost:3000/goals",
+            url: "http://localhost:3000/goals/"+id,
             data: JSON.stringify({
                 "name": name,
                 "type": type,
