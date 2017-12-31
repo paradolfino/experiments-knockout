@@ -61,6 +61,7 @@ function ViewModel() {
                 }
             });
         });
+        self.goals.removeAll(self.selectedGoals);
     }
 
     self.types = ko.observableArray(['Health','Fitness','Professional','Relationships','Self Help']);
