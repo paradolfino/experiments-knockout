@@ -91,7 +91,7 @@ function ViewModel() {
                 "type": type,
                 "deadline": deadline
             }),
-            type: 'POST',
+            type: 'PUT',
             contentType: 'application/json',
             success: function(data) {
                 console.log('Goal added');
