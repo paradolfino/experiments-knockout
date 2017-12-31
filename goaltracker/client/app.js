@@ -68,6 +68,7 @@ function ViewModel() {
     }
 
     self.updateGoal = function() {
+        var id = self.updateId;
         var name =  $("#name").val();
         var type =  $("#type").val();
         var deadline =  $("#deadline").val();
